@@ -1,0 +1,10 @@
+.main_container{
+    height: 350px;
+    width: 500px;
+    padding: 20px;
+    position: relative;
+    left: 380px;
+    top: 120px;
+    border: solid black 1px;
+    background-color: rgb(174, 173, 173);
+}

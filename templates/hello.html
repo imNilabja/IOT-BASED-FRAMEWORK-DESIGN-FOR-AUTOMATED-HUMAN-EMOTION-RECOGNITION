@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  <style>
+    .main_container{
+    height: 350px;
+    width: 500px;
+    padding: 20px;
+    position: relative;
+    left: 380px;
+    top: 120px;
+    border: solid black 1px;
+    background-color: rgb(174, 173, 173);
+}
+    </style>
+</head>
+
+<body>
+
+  <div class="main_container">
+    <div class="login">
+      <h1>Emotion Prediction</h1>
+  
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict') }}" method="post">
+        <input type="text" name="GSR_value" placeholder="GSR Data" required="required" style="position: relative; margin: 20px 20px 20px 0px;" />
+        <input type="text" name="ECG_value" placeholder="ECG Data" required="required" style="position: relative; margin: 20px 20px 20px 0px;" />
+        <!-- <input type="text" name="Petal_Length" placeholder="Petal Length" required="required" />
+        <input type="text" name="Petal_Width" placeholder="Petal Width" required="required" /> -->
+  
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </form>
+  
+      <br>
+      <br>
+  
+      {% if prediction_text %}
+      <h1>{{ prediction_text }}</h1>
+      {% endif %}
+  
+    </div>
+    
+  </div>
+
+</body>
+</html>
+
